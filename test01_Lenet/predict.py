@@ -23,11 +23,11 @@ def main():
 
     with torch.no_grad():
         outputs = net(im)
-        predict = torch.max(outputs, dim=1)[1].numpy()  # 预测出最大概率的index，将其放入class类中，找到对应的类别
-    print(classes[int(predict)])
+    #     predict = torch.max(outputs, dim=1)[1].numpy()  # 预测出最大概率的index，将其放入class类中，找到对应的类别
+    # print(classes[int(predict)])
 
-    #     predict = torch.softmax(outputs, dim=1)  # 预测的概率
-    # print(predict)
+        predict = torch.softmax(outputs, dim=1)  # 预测的概率
+    print(predict)
 
 
 
